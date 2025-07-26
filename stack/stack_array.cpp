@@ -30,17 +30,20 @@ public:
   {
     return v.empty();
   }
-
 };
 
 int main()
 {
   myStack nums;
+  int n;
+  cin >> n;
 
-  nums.push(10);
-  nums.push(20);
-  nums.push(30);
-  // nums.push(40);
+  for (int i = 0; i < n; i++)
+  {
+    int x;
+    cin >> x;
+    nums.push(x);
+  }
 
   cout << nums.top() << endl;
 
