@@ -1,23 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool isValid(string s)
+bool isStringEmpty(string &s)
 {
   stack<char> st;
+
   for (char ch : s)
   {
-    if (ch == '0')
-    {
-      if (!st.empty() && st.top() == '1')
-      {
-        st.pop();
-      }
-      else
-      {
-        st.push(ch);
-      }
-    }
-    else if (ch == '1')
+    if (ch == '1')
     {
       if (!st.empty() && st.top() == '0')
       {
@@ -28,7 +18,12 @@ bool isValid(string s)
         st.push(ch);
       }
     }
+    else
+    {
+      st.push(ch);
+    }
   }
+
   return st.empty();
 }
 
@@ -40,7 +35,7 @@ int main()
   {
     string s;
     cin >> s;
-    cout << (isValid(s) ? "YES" : "NO") << endl;
+    cout << (isStringEmpty(s) ? "YES" : "NO") << endl;
   }
   return 0;
 }
