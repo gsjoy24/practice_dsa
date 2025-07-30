@@ -1,1 +1,1 @@
-Cycle Detected
+40 20 50 60 30 10 
