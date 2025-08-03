@@ -44,6 +44,7 @@ Node *input_tree()
     // work with that node.
     int l, r;
     cin >> l >> r;
+
     Node *myLeft, *myRight;
 
     if (l == -1)
