@@ -67,10 +67,46 @@ Node *input_tree()
   return root;
 }
 
+int max_depth(Node *root)
+{
+  if (root == NULL)
+    return 0;
+
+  int l = max_depth(root->left);
+  int r = max_depth(root->right);
+
+  return max(l, r) + 1;
+}
+
+void get_nodes_at_level(Node *root, int targetLevel, int currentLevel)
+{
+  if (!root)
+    return;
+  if (currentLevel == targetLevel)
+  {
+    cout << root->val << " ";
+    return;
+  }
+  get_nodes_at_level(root->left, targetLevel, currentLevel + 1);
+  get_nodes_at_level(root->right, targetLevel, currentLevel + 1);
+}
+
 int main()
 {
 
   Node *root = input_tree();
 
+  int maxDepth = max_depth(root);
+
+  int x;
+  cin >> x;
+
+  if (x > maxDepth - 1 || x < 0)
+  {
+    cout << "Invalid" << endl;
+    return 0;
+  }
+
+  get_nodes_at_level(root, x, 0);
   return 0;
 }
