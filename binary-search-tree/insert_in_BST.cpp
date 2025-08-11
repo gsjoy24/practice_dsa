@@ -16,6 +16,25 @@ public:
   }
 };
 
+void level_order(Node *root)
+{
+  queue<Node *> q;
+  q.push(root);
+
+  while (!q.empty())
+  {
+    Node *f = q.front();
+    q.pop();
+
+    cout << f->val << " ";
+    if (f->left)
+      q.push(f->left);
+
+    if (f->right)
+      q.push(f->right);
+  }
+}
+
 Node *input_tree()
 {
   int val;
@@ -68,10 +87,34 @@ Node *input_tree()
   return root;
 }
 
-bool insert(Node *root, int val)
+void insert(Node *&root, int val)
 {
-
-
+  if (!root)
+  {
+    root = new Node(val);
+  }
+  if (root->val > val)
+  {
+    if (root->left == NULL)
+    {
+      root->left = new Node(val);
+    }
+    else
+    {
+      insert(root->left, val);
+    }
+  }
+  else
+  {
+    if (root->right == NULL)
+    {
+      root->right = new Node(val);
+    }
+    else
+    {
+      insert(root->right, val);
+    }
+  }
 }
 
 int main()
@@ -80,10 +123,9 @@ int main()
   int val;
   cin >> val;
 
-  if (insert(root, val))
-    cout << "Found" << endl;
-  else
-    cout << "Not Found" << endl;
+  insert(root, val);
+  insert(root, 11);
+  level_order(root);
 
   return 0;
 }
