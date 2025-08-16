@@ -1,5 +1,6 @@
-He 1
-I 1
-We 1
-football 3
-love 3
+2
+3
+5
+6
+7
+8
