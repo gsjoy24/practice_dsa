@@ -36,7 +36,8 @@
 		"iostream": "cpp",
 		"xiosbase": "cpp",
 		"xlocale": "cpp",
-		"iterator": "cpp"
+		"iterator": "cpp",
+		"set": "cpp"
 	},
 	"[cpp]": {
 		"editor.defaultFormatter": "ms-vscode.cpptools",
