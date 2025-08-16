@@ -1,4 +1,5 @@
-rakib 9 85 
-rwakib 10 85 
-sakib 25 92 
-akib 7 96 
+He 1
+I 1
+We 1
+football 3
+love 3

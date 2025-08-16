@@ -60,3 +60,9 @@ int main()
 
   return 0;
 };
+
+// 4
+// sakib 25 92
+// rakib 9 85
+// rwakib 10 85
+// akib 7 96
