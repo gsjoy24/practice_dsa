@@ -17,5 +17,11 @@ int main()
   {
     cout << *it << endl;
   }
+
+  if (st.count(12))
+    cout << "Ache" << endl;
+  else
+    cout << "Nai" << endl;
+
   return 0;
 }
